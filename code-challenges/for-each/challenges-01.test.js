@@ -82,13 +82,6 @@ const removeWithForEach = (arr, callback) => {
   return arr;
 };
 
-// describe('Testing challenge 4', () => {
-//   test('It should remove three elements from the array', () => {
-//     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne)).toStrictEqual([1, 2, 3, 4, 5, 6, 7]);
-//     expect(removeWithForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], removeOne).length).toStrictEqual(7);
-//   });
-// });
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -100,13 +93,18 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  // Solution code here...
-};
+  arr.forEach( (value) => {
+    if (value%3 == 2) {
+      arr.pop();
+    }
+  });
+  return arr;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store inventory.
 
 The inventory is formatted like this:
 [
