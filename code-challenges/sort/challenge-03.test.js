@@ -85,7 +85,10 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  arr.sort( (a, b) => {
+    return a.toString().length - b.toString().length;
+  });
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -107,8 +110,11 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
-};
+  arr.sort( (a, b) => {
+    return (a.lastName > b.lastName) ? 1:-1;  //bye bye if statements! this operator is amazing
+  });
+  return arr;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
@@ -121,7 +127,32 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  arr.sort( (a, b) => {
+    if (a.lastName.toUpperCase() > b.lastName.toUpperCase()) {
+      return 1;
+    } else if (a.lastName.toUpperCase() < b.lastName.toUpperCase() ) {
+      return -1;
+    }
+
+    if (a.lastName.toUpperCase() === b.lastName.toUpperCase() && 
+    a.firstName.toUpperCase() > b.firstName.toUpperCase()) {
+      return 1;
+    } else if (a.lastName.toUpperCase() === b.lastName.toUpperCase() &&
+    a.firstName.toUpperCase() < b.firstName.toUpperCase()) {
+      return -1;
+    }
+
+    if (a.lastName.toUpperCase() === b.lastName.toUpperCase() &&
+    a.firstName.toUpperCase() === b.firstName.toUpperCase() &&
+    a.age > b.age) {
+      return 1;
+    } else if (a.lastName.toUpperCase() === b.lastName.toUpperCase() &&
+    a.firstName.toUpperCase() === b.firstName.toUpperCase() &&
+    a.age < b.age) {
+      return -1;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
