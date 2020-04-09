@@ -24,7 +24,8 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetize = (arr) => {
-  // Solution code here...
+  arr.sort();
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,7 +35,10 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  // Solution code here...
+  arr.sort( (a, b) => {
+    return (a.length - b.length);
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +50,10 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  arr.sort( (a, b) => {
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,7 +70,10 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  arr.sort( (a, b) => {
+    return a.price - b.price;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
