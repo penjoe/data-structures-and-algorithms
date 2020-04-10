@@ -37,8 +37,18 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach(city => {
+    city.replace(' ', '');
+    if (city.search(/\b[J-Z]+[a-z]*\b/g)) {
+      newArr.push(city);
+    }
+  });
+  return newArr;
 };
+
+// describe('Testing challenge 3', () => {
+//   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -54,6 +64,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  return /\bO?o?(ct)(ober)?\b/g.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,8 +77,9 @@ For example, if given the string "Hello, and have a wonderful day!", the word "H
 The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "a ", "wonderful "].
 ------------------------------------------------------------------------------------------------ */
 
-const noPunctuation = str => {
+const noPunctuation = (str) => {
   // Solution code here...
+  return str.match(/\b\w*\s/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,6 +96,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+  return str.replace(/[aeiou]/gi, '_');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -100,6 +113,7 @@ const seashells = 'She sells seashells by the seashore. The shells she sells are
 
 const findShells = (str) => {
   // Solution code here...
+  return str.match(/\w*ells/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
