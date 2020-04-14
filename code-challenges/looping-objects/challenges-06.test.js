@@ -199,6 +199,7 @@ const houseSurvivors = (arr) => {
     const charArr = Object.entries(arr[i])
     let houseName = charArr[3][1];
     let people = [];
+
     // character
     if (charArr[0][1]) {
       people.push(charArr[0][1])
@@ -223,13 +224,14 @@ const houseSurvivors = (arr) => {
     }
 
     let houseSize = people.length;
+
     survivors.push({
       house: houseName,
       members: houseSize,
     });
   }
-  console.log(survivors)
-  return survivors;
+
+return survivors;
 };
 
 /* ------------------------------------------------------------------------------------------------
