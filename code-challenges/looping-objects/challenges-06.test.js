@@ -152,7 +152,26 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    const charArr = Object.entries(arr[i])
+    let houseName = charArr[3][1];
+    let people = [];
+    if (charArr[0][1]) {
+      people.push(charArr[0][1])
+    }
+    if (charArr[1][1]) {
+      people.push(charArr[1][1])
+    }
+    if (charArr[2][1]) {
+      charArr[2][1].forEach( children => people.push(children))
+    }
+    let houseSize = people.length;
+
+    sizes.push({
+      house: houseName,
+      members: houseSize,
+    });
+  }
   return sizes;
 };
 
@@ -176,7 +195,27 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    const charArr = Object.entries(arr[i])
+    let houseName = charArr[3][1];
+    let people = [];
+    if (charArr[0][1]) {
+      people.push(charArr[0][1])
+    }
+    //???
+    // if (charArr[1][1]) {
+    //   people.push(charArr[1][1])
+    // }
+    if (charArr[2][1]) {
+      charArr[2][1].forEach( children => people.push(children))
+    }
+    let houseSize = people.length;
+
+    survivors.push({
+      house: houseName,
+      members: houseSize,
+    });
+  }
   return survivors;
 };
 
