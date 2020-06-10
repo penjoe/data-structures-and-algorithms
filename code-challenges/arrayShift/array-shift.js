@@ -5,7 +5,7 @@ Write a function called insertShiftArray which takes in an array and the value t
 */
 
 const insertShiftArray = (array, value) => {
-  let mid = Math.floor(array.length/2);
+  let mid = Math.round(array.length/2);
   let arr = array;
   let newArr = [];
     for (let i = 0; i < arr.length; i++){
@@ -22,7 +22,7 @@ const insertShiftArray = (array, value) => {
   return newArr;
 }
 
-console.log(insertShiftArray([2,4,6,8], 5));
+console.log(insertShiftArray([2,4,6,8,10], 5));
 
 
 
