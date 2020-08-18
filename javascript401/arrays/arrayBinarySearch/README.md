@@ -17,4 +17,5 @@ Given a sorted array and a search value:
   6. else return -1 as default
 
 ## Solution
-![whiteboard image]('')
+
+![whiteboard image](../../../assets/array-binary-search.jpg)
