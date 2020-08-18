@@ -1,2 +1,4 @@
-# data-structures-and-algorithms
-Daily code challenges from Code Fellows 301
+# DS&A
+
+A repo containing a collection of code challenges, data structures and algorithms.
+

@@ -1,7 +1,8 @@
 {
   "globals": {
     "Mustache": true,
-    "$": true
+    "$": true,
+    "jest": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
