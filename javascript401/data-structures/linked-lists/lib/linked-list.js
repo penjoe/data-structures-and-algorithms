@@ -48,7 +48,7 @@ class LinkedList {
     /**
      * So long as the current node has a value, do stuff.
      */
-    while( current != null ) {
+    while( current !== null ) {
       if (current.value === searchVal) {
         console.log(true);
         return true;
@@ -66,13 +66,23 @@ class LinkedList {
 
     let current = this.head;
     let result = '';
+
+    /** 
+     * So long as the current node exists, do stuff
+     */
     while (current) {
 
+      /**
+       * if current.value is not null, concat all values one to another
+       */
       if (current !== null) {
         result += ' { ' + current.value + ' } ' + ' -> ';
         current = current.next;
       };
       
+      /**
+       * if current.value is null, concat the string 'NULl' to the end of result
+       */
       if ( current === null) {
           result += ' NULL';
       };

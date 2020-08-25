@@ -10,3 +10,24 @@ TODOs
 6. Will return false when searching for a value in the linked list that does not exist
 7. Can properly return a collection of all the values that exist in the linked list
 */
+
+const Node = require('../lib/node');
+
+describe('Test suite for the Node class', () => {
+
+  // let node;
+
+  // beforeEach( () => {
+  //   let node = new Node();
+  // });
+
+  it('Verify that node is properly returning an instance of the Node class from lib/node.js', () => {
+    let node = new Node();
+    expect(node instanceof Node).toBe(true);
+  });
+
+  it('Check that each new node created by the Node class has a value and pointer to the next node', () => {
+
+  });
+
+});
