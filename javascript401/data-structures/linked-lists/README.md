@@ -47,4 +47,8 @@ Public methods used in this linked list implementation:
 
 Solution for Code Challenge 06 - `ll-insertions`
 
-![linked list whiteboard](./assets/ll-insertions.jpg)
+![ll-insertions whiteboard](./assets/ll-insertions.jpg)
+
+Solution for Code Challenge 07 - `kthFromEnd`
+
+![kthFromEnd whiteboard](./assets/kthFromEnd.jpg)
