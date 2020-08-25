@@ -35,6 +35,69 @@ class LinkedList {
 
   };
 
+  append(val) {
+
+    let node = new Node(val);
+    
+    if (!this.head) {
+      this.head = node;
+    } else {
+      let current = this.head;
+      while(current.next){
+        current = current.next;
+      }
+      current.next = node;
+    }
+    return this;
+  };
+
+  insertBefore(val, newVal){
+
+    let current = this.head;
+    let previous;
+
+    while(current.next){
+        if(current.value === val) {
+          let node = new Node(newVal);
+          node.next = previous.next;
+          previous.next = node;
+          break;
+        };
+        previous = current;
+        current = current.next;
+    };
+
+    // while(current.next) {
+    //   if (current.value !== val) {
+    //     previous = current;
+    //     current = current.next;
+    //   };
+    //   if (current.value === val) {
+    //     let node = new Node(newVal);
+    //     previous.next = current;
+    //     previous = node;
+    //     return previous;
+    //   };
+    // };
+
+  };
+
+  insertAfter(val, newVal) {
+  
+    let current = this.head;
+    while(current.next) {
+      if (current.value === val) {
+        let node = new Node(newVal);
+        let nextNode = current.next;
+        current.next = node;
+        node.next = nextNode;
+        break;
+      };
+      current = current.next;
+    };
+
+  };
+
   /**
    * will take in a value and returns a boolean whether ot not that value exists in the linked list
    */
@@ -57,6 +120,7 @@ class LinkedList {
     };
     console.log(false);
     return false;
+
   };
 
   /**
