@@ -2,6 +2,8 @@
 
 Implementation of a singly linked list.
 
+[Challenge 06 PR](https://github.com/penjoe/data-structures-and-algorithms/pull/25)
+
 ## Challenge
 
 Create a linked list with methods to:
