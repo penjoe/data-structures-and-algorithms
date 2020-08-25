@@ -9,6 +9,12 @@ Create a linked list with methods to:
 2. includes() - search linked list and find a specified value, returning a boolean value whether or not the specified value is in the linked list
 3. toString() - return a string of all the values in the linked list
 
+Update: 
+Added new methods for inserting nodes to the linked list:
+1. append() - add a new node to the tail of the list
+2. insertBefore - insert a new node before a specified node
+3. insertAfter - insert a new node after a specified node
+
 ## Approach & Efficiency
 
 The approach I took was the most direct one I could come up with. For the insert method, I wanted to simply create a new node and set the pointer of that node to the head and then set the pointer of the current head to the new node, effectively placing the new node at the head. This was an O(1) complexity.
@@ -32,3 +38,9 @@ Public methods used in this linked list implementation:
 `insertBefore()` - Takes in two arguments, a value to be searched for and a newValue to be added. It traverses the linked list, finds the value and inserts a new node with the given newValue before the node with the searched value.
 
 `insertAfter()` - This method takes in two arguments, a value to be searched and a newValue to to added. It traverses the linked list, finds the given value and inserts a new node with the newValue after the node with the searched value.
+
+## Solution
+
+Solution for Code Challenge 06 - `ll-insertions`
+
+![linked list whiteboard](./assets/ll-insertions.jpg)

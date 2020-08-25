@@ -67,19 +67,6 @@ class LinkedList {
         current = current.next;
     };
 
-    // while(current.next) {
-    //   if (current.value !== val) {
-    //     previous = current;
-    //     current = current.next;
-    //   };
-    //   if (current.value === val) {
-    //     let node = new Node(newVal);
-    //     previous.next = current;
-    //     previous = node;
-    //     return previous;
-    //   };
-    // };
-
   };
 
   insertAfter(val, newVal) {
