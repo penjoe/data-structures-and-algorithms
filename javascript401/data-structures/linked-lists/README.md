@@ -39,6 +39,8 @@ Public methods used in this linked list implementation:
 
 `insertAfter()` - This method takes in two arguments, a value to be searched and a newValue to to added. It traverses the linked list, finds the given value and inserts a new node with the newValue after the node with the searched value.
 
+`nodeCounter` - A simple method that tracks the total number of nodes that are in the linked list.
+
 ## Solution
 
 Solution for Code Challenge 06 - `ll-insertions`
