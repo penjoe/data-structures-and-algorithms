@@ -17,6 +17,11 @@ Added new methods for inserting nodes to the linked list:
 2. insertBefore - insert a new node before a specified node
 3. insertAfter - insert a new node after a specified node
 
+Update:
+Added a new method for finding a specific node:
+1. kthFromEnd(k) - takes in a number and returns the value of the node that is that number from the end.
+2. nodeCounter() - a simple method that traverses the list and counts each node, returning total # of nodes
+
 ## Approach & Efficiency
 
 The approach I took was the most direct one I could come up with. For the insert method, I wanted to simply create a new node and set the pointer of that node to the head and then set the pointer of the current head to the new node, effectively placing the new node at the head. This was an O(1) complexity.
