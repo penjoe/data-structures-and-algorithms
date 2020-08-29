@@ -3,10 +3,23 @@
 const Node = require('./node.js');
 
 /**
- * @param {*} this.head - This is a reference to the head, or beginning, of a linked list.
+ * A Linked List class module.
  */
 class LinkedList {
 
+  /**
+   * Used to create the Linked List object. Instantiates by itself as an empty list.
+   * @constructor
+   * @param {*} this.head - This is a reference to the head, or beginning, of a linked list.
+   * @function insert - Will insert a new node at the head of the linked list.
+   * @function append - Will apend a new node to the tail of the linked list.
+   * @function insertBefore - Will insert a new node before a specified node.
+   * @function insertAfter - Will insert a new node after a specified node.
+   * @function includes - Will search linked list, returning a true/false if a given value is found.
+   * @function toString - Will traverse linked list and concat each nodes value into a string.
+   * @function kthFromEnd -  Will take in a number and return the value of the node that is that number from the last node.
+   * @function nodeCounter - Will traverse linked list and return the total # of nodes.
+   */
   constructor() {
     this.head = null;
   };
@@ -60,6 +73,8 @@ class LinkedList {
    * Will traverse over the linked list, searching for a specified value. When found, insert a new node with a goven value before the node with the value that was searched for.
    * @param {*} val - the value to search for
    * @param {*} newVal - the value to add to the new inserted node
+   * @param {*} current - the current node durring traversal, starting at the head of the linked list
+   * @param {*} previous - an empty variable that will be used to grab the value of the node that is previous to current
    */
   insertBefore(val, newVal){
 
@@ -124,6 +139,8 @@ class LinkedList {
 
   /**
    * Takes no argument and will return a string representing all the values of the linked list
+   * @param {*} current - the current node durring traversal, starting at the head of the linked list
+   * @param {string} result - an empty string that will be used to concat each node's value during traversal
    */
   toString() {
 
@@ -145,18 +162,70 @@ class LinkedList {
       };
     };
     console.log(result);
+    return result;
+  };
+
+  /**
+   * Will take in a number(k) and return the value of the node that is k from the end of the linked list
+   * @param {*} k - the number/argument passed in to determine k from end
+   * @param {*} current - the current node durring traversal, starting at the head of the linked list
+   * @param {*} previous - an empty variable that will be used to track another node during traversal
+   * @param {integer} counter - variable used to track what index each node is at
+   */
+  kthFromEnd(k) {
+
+    let current = this.head;
+    let second = this.head;
+    let counter = 0;
+    let totalNodes = 1;
+
+    if ( current === null) {
+      console.log(0);
+      return 0;
+    } else {
+      while (current.next !== null) {
+
+        totalNodes++;
+        current = current.next;
+        
+        if ( counter >= k) {
+          second = second.next;
+        } else {
+          counter++;
+        };
+
+      };
+    };
+    
+    if (k > totalNodes) {
+      console.log('error, k is greater than # of nodes');
+    } else if (totalNodes <= 1) {
+      console.log('error, linked list does not have enough nodes for traversal');
+    } else if (k < 1) {
+      console.log('error, k needs to be at least 1 or greater');
+    } else if (k === totalNodes) {
+      console.log('error, k is the same length as the linked list. kth from end is the head node');
+    } else if (k < totalNodes && k >= 1) {
+      console.log(second.value);
+      return second.value;
+    } else {
+      console.log('Opps, something wen\'t wrong!');
+    };
+
   };
 
   /**
    * Tracks the total count of nodes in the linked list
-   *@returns the total count of nodes
+   * @param {*} current - the current node durring traversal, starting at the head of the linked list
+   * @param {integer} tally - variable used to track what index each node is at
+   *@returns the total count of nodes in the linked list
    */
   nodeCounter() {
 
     let current = this.head;
     let tally = 0;
 
-    while(current){
+    while (current) {
       tally++;
       current = current.next;
     };
@@ -167,3 +236,13 @@ class LinkedList {
 };
 
 module.exports = LinkedList;
+
+/*
+
+------- basic linked list traversal -------
+set current to this.head
+while current is a truthy value
+  do stuff
+  current = current.next;
+
+*/

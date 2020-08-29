@@ -4,23 +4,28 @@ const LinkedList = require('./lib/linked-list');
 
 let list = new LinkedList();
 
+console.log(list)
+
+list.insert(9);
+list.insert(8);
+list.insert(7);
+list.insert(6);
+list.insert(4);
 list.insert(1);
-list.insert(3);
-list.insert(2);
-list.insert('Joe');
-list.insert('Meghan');
-list.insert('Coding is fun!');
-list.append('Hi, I\'m a node!');
-list.append('test');
-list.append('last node');
-list.insertBefore('Joe', 'test');
-list.insertBefore('Meghan', 'wifey');
-list.insertAfter('wifey', 'testAfter');
-list.includes('Joe'); // should return true
-list.includes('Billy'); //should return false
-list.includes();
+list.append(10);
+list.append(11);
+list.append(12);
+list.insertBefore(4, 3);
+list.insertBefore(3, 2);
+list.insertAfter(4, 5);
+list.includes(5); // should return true
+list.includes('Billy'); // should return false
+list.includes(); // should return false
 list.toString();
+list.kthFromEnd(6);
 
-list.nodeCounter();
+// list.nodeCounter();
 
-console.log('linked list', list);
+// console.log(list);
+
+// console.log('linked list', JSON.stringify(list, null, 2));
