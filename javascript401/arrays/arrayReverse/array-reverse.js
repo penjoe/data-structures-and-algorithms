@@ -10,6 +10,7 @@ const reverse = (arr) => {
     start++;
     end--;
   };
+  return arr;
 };
 
 module.exports = reverse;
