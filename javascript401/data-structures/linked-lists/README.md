@@ -2,7 +2,7 @@
 
 Implementation of a singly linked list.
 
-[Challenge 06 PR](https://github.com/penjoe/data-structures-and-algorithms/pull/25)
+[Challenge 06 PR](https://github.com/penjoe/data-structures-and-algorithms/pull/27)
 
 ## Challenge
 
@@ -25,6 +25,8 @@ For the includes and toString both, I needed to traverse the linked list to eith
 
 `insertBefore`, `insertAfter` and `append` are all an O(n) since they loop the entirety of the linked list.
 
+All other methods will be a time complexity of O(n) since they all require the traversal of the list, whether partially or in its entirety.
+
 ## API
 
 Public methods used in this linked list implementation:
@@ -41,7 +43,9 @@ Public methods used in this linked list implementation:
 
 `insertAfter()` - This method takes in two arguments, a value to be searched and a newValue to to added. It traverses the linked list, finds the given value and inserts a new node with the newValue after the node with the searched value.
 
-`nodeCounter` - A simple method that tracks the total number of nodes that are in the linked list.
+`kthFromEnd()` - This method will take in a number, `k`, and return the value of the node that is `k` from the end of the list. To do this, the list is traversed up until a given value of `k`. Once the current node reaches this point, a new pointer is set to a variable called `second` that then follows the current node at a relatve distance. Meaning that second will never catch up to current. So once current reaches the end of the list, second will be pointing to the node with the desired value. This uses a time complexity of O(n) and a space complexity of O(1).
+
+`nodeCounter()` - A simple method that tracks the total number of nodes that are in the linked list. 
 
 ## Solution
 
