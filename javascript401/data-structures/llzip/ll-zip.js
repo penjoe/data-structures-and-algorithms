@@ -22,6 +22,13 @@ ll2.toString();
  * @returns Both linked lists zipped into one.
  */
 module.exports = function (list1, list2) {
+
+  if(!list1.head) {
+    return list2;
+  } else if (!list2.head) {
+    return list1;
+  };
+
   let current1 = list1.head;
   let temp1 = current1.next;
   let current2 = list2.head;
@@ -51,7 +58,6 @@ module.exports = function (list1, list2) {
   current1 = current1.next;
   current1.next = temp1;
 
-  console.log(JSON.stringify(list1, null, 2));
   return list1;
 
 };
