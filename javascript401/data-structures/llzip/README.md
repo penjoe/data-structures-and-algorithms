@@ -5,6 +5,8 @@
 
 This challenge is to take two separate singly linked lists, "zip" them together and return the new list that contains all nodes of the two previous lists.
 
+[GitHub PR](https://github.com/penjoe/data-structures-and-algorithms/pull/31)
+
 ## Challenge Description
 <!-- Description of the challenge -->
 In this challenge, I will be creating a function called zipLists(). This function will take in two existing linked lists as parameters. The goal will be to zip the two lists together, much the same way a zipper on your jacket would work. The result should be one linked list that has all the nodes of the two linked lists that were passed in. The nodes should be alternating between the two original linked lists. Here's a visualization of what is expected:
