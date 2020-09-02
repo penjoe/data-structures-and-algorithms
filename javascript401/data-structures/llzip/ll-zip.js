@@ -1,20 +1,5 @@
 'use strict';
 
-/** Import LinkedList class, create and populate 2 new lists. */
-const LL = require('../linked-lists/lib/linked-list');
-let ll1 = new LL();
-let ll2 = new LL();
-ll1.insert(7);
-ll1.insert(5);
-ll1.insert(3);
-ll1.insert(1);
-ll1.toString();
-ll2.insert(8);
-ll2.insert(6);
-ll2.insert(4);
-ll2.insert(2);
-ll2.toString();
-
 /**
  * Takes in two linked lists and 'zips' them together.
  * @param {*} L1 - First linked list to be zipped into.
@@ -23,6 +8,7 @@ ll2.toString();
  */
 module.exports = function (list1, list2) {
 
+  /** Checks to see if either list is empty. */
   if(!list1.head) {
     return list2;
   } else if (!list2.head) {

@@ -35,3 +35,9 @@ Challenge 08 whiteboard part 1:
 ![whiteboard part 1](./assets/ll-zip-pt1.jpg)
 Challenge 08 whiteboard part 2:
 ![whiteboard part 1](./assets/ll-zip-pt2.jpg)
+
+## Collaboration
+
+Code solution worked out with:
+- Diane Stephani
+- Ryan Geddas
