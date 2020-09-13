@@ -27,3 +27,4 @@ A collection of code challenges, data structures and algorithms.
     2. [Data Structures](javascript401/data-structures)
         1. [Linked Lists](javascript401/data-structures/linked-lists)
         2. [Linked List Zip](javascript401/data-structures/llzip)
+        3. [Stacks and Queues](javascript401/data-structures/stacks-and-queues)
