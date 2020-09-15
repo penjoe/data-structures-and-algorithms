@@ -2,7 +2,7 @@
 
 Implementation and use of both a Stack and a Queue.
 
-[Challenge 10 PR](https://github.com/penjoe/data-structures-and-algorithms/pull/32)
+[Challenge 10 PR](https://github.com/penjoe/data-structures-and-algorithms/pull/33)
 
 ## Challenge
 
