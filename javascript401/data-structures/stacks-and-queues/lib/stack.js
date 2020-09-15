@@ -26,10 +26,17 @@ class Stack {
   // pops top node off of stack
   pop() {
 
-    let temp = this.top;
-    this.top = this.top.next;
-    temp.next = null;
-    return temp.value;
+    if(!this.top){
+      return this.top;
+    }
+    else {
+
+      let temp = this.top;
+      this.top = this.top.next;
+      temp.next = null;
+      return temp.value;
+
+    };
 
   };
 
@@ -37,9 +44,9 @@ class Stack {
   peek() {
 
     if(!this.top){
-      return {};
-    } else if(this.top.value){
-      console.log(this.top.value);
+      return this.top;
+    } 
+    else if(this.top.value){
       return this.top.value;
     }
 
@@ -49,13 +56,13 @@ class Stack {
   isEmpty() {
 
     if (this.top) {
-      console.log('false');
       return false;
-    } else if (!this.top) {
-      console.log('true');
+    } 
+    else if (!this.top) {
       return true;
-    } else {
-      return {};
+    } 
+    else {
+      return 'error';
     };
 
   };
