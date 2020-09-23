@@ -6,5 +6,10 @@ describe('Unit tests for multi bracket validation', () => {
 
   it('FIFO characters should be the same', () => {
 
+    let test = '(){[]}';
+
+    expect(valid(test)).toBe(true);
+
+  });
   
 });

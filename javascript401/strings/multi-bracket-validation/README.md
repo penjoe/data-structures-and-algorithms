@@ -1,6 +1,10 @@
+[Table of Contents](README.md)
+
 # Challenge Summary
 
 String validation.
+
+[GitHub PR](https://github.com/penjoe/data-structures-and-algorithms/pull/35)
 
 ## Challenge Description
 
