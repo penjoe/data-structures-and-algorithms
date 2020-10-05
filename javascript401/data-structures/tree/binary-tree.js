@@ -103,57 +103,57 @@ class BinaryTree {
 
 };
 
-class BinarySearchTree extends BinaryTree {
+// class BinarySearchTree extends BinaryTree {
 
-  constructor(){
-    super();
-    this.root = null;
-  };
+//   constructor(){
+//     super();
+//     this.root = null;
+//   };
 
-  add(value){
+//   add(value){
 
-    let node = new TreeNode(value);
+//     let node = new TreeNode(value);
 
-    if(!this.root){
-      this.root = node;
-    };
+//     if(!this.root){
+//       this.root = node;
+//     };
 
-    if(node.value < this.root){
-      this.root.left = node;
-    }
-    else if (node.value > this.root){
-      this.root.right = node;
-    };
+//     if(node.value < this.root){
+//       this.root.left = node;
+//     }
+//     else if (node.value > this.root){
+//       this.root.right = node;
+//     };
 
-  };
+//   };
 
-  constains(){
+//   constains(){
 
-  };
+//   };
 
-};
+// };
 
-let twenty = new TreeNode(20);
-let twelve = new TreeNode(12);
-let six = new TreeNode(6);
-let seventeen = new TreeNode(17);
-let thirtytwo = new TreeNode(32);
-let twentyfive = new TreeNode(25);
-let fourty = new TreeNode(40);
-let seventy = new TreeNode(70);
+// let twenty = new TreeNode(20);
+// let twelve = new TreeNode(12);
+// let six = new TreeNode(6);
+// let seventeen = new TreeNode(17);
+// let thirtytwo = new TreeNode(32);
+// let twentyfive = new TreeNode(25);
+// let fourty = new TreeNode(40);
+// let seventy = new TreeNode(70);
 
-twenty.left = twelve;
-twenty.right = thirtytwo;
-twelve.left = six;
-twelve.right = seventeen;
-thirtytwo.right = fourty;
-thirtytwo.left = twentyfive;
-fourty.right = seventy;
+// twenty.left = twelve;
+// twenty.right = thirtytwo;
+// twelve.left = six;
+// twelve.right = seventeen;
+// thirtytwo.right = fourty;
+// thirtytwo.left = twentyfive;
+// fourty.right = seventy;
 
-let tree = new BinaryTree(twenty);
+// let tree = new BinaryTree(twenty);
 
 // console.log(tree.preOrder());
 // console.log(tree.inOrder());
 // console.log(tree.postOrder());
 
-module.exports = BinarySearchTree;
+module.exports = BinaryTree;
