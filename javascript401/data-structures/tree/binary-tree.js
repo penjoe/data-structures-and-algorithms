@@ -141,6 +141,32 @@ class BinaryTree {
 
   };
 
+  breadthFirst(tree){
+
+    let queue = new Queue();
+    queue.enqueue(this.root);
+    let results = [];
+
+    while(!queue.isEmpty()){
+
+      let front = queue.dequeue();
+      results.push(front.value);
+      console.log(front.value);
+
+      if(front.left){
+        queue.enqueue(front.left);
+      };
+      if(front.right){
+        queue.enqueue(front.right);
+      };
+
+    };
+
+    console.log(results);
+    return results;
+
+  };
+
 };
 
 module.exports = BinaryTree;
