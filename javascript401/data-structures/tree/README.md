@@ -23,3 +23,16 @@ Space Complexity:
 - `add(value)` - A method of the BonarySearchTree class that will add a node to the tree and sort it. If the inserted value is `<` the root node, it will add it as the left child of the root node. If the root node has a left child, it will traverse the tree until there is no left child and add the new node. If the inserted value is `>` the root node, it will do the same as above, traverse the tree until there is an open right child position and add the node. This method used a helper function called `recursiveAdd(root, node)` that takes the current root node and the node to be added. It recursively calls itself until the base case is met. The base case being, there is a left/right child node spot available to add the new node.
 
 - `contains(value)` - A method of the BinarySearchTree class that will take in a value and search the tree for that value, returning a boolean value if that value exists or not. Uses a binary search approach, so at the worst case will only ever search one side of the tree.
+
+## Code Challenge 16
+
+#### Challenge Description
+
+Create an instance method of the BinaryTree class that will traverse the tree and return the largest value stored in the tree.
+
+#### Approach and Efficiency
+
+For this solution, it is assumed that all node values are numeric. First, I used a breadth-first traversal method. Inside of the while loop, I declared a variable called `temp`. This vaariable is immediately given the value of `this.root.value`. On each iteration of the while loop, temp is compared against the current nodes value. If the value of the current node is great than, or `>`, then reassign temp to the current nodes value. At the end of the traversal, return temp. If done correctly, temp will now hold the largest value stored in the tree.
+
+#### Solution
+![cc-16-whiteboard](../../../assets/cc-16-whiteboard.png)
