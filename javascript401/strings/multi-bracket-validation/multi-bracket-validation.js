@@ -21,7 +21,6 @@ module.exports = function multiBracketValidation(str){
 
   for (let i = 0; i < arr.length; i++){
     if ( i == '(' ) {
-      console.log(stack);
       stack.push(i);
     };
     if ( i == ')' ) {
@@ -30,7 +29,7 @@ module.exports = function multiBracketValidation(str){
       if ( popped != '[' || '(' || '{' ) {
         return false;
       }
-      else if ( stack.peek() ) {
+      else if ( !stack.peek() ) {
         return false;
       }
       else {
