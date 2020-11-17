@@ -19,6 +19,7 @@ class LL {
     };
   };
 
+  /* for the get method, inside of each index that coems back from the hash, traveerse the LL, at each node, check if the value has a key tat mateches the hash key. Maybe object.keys? */
   _get() {
     if (!this.head) {
       return null;

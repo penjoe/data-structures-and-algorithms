@@ -23,6 +23,7 @@ class Hashtable {
 
   };
 
+  /* use the LL method at each hash to get a specific key value pair */
   _get(key) {
 
     let hash = this._hash(key);
@@ -36,17 +37,19 @@ class Hashtable {
 
   };
 
-  _contains(key) {
-
+  /* use a LL method to cehck if a specific value exists at this hash*/
+  _contains(key) {    
+    let hash = this._hash(key)
+    this.storage[hash].toString();
   };
 
   /**
-   * An inplementation of the `djb2` hash function.
+   * A JavaScript inplementation of the `djb2` hash function.
    * @param {*} key - the string to run through the hash fucntion that will determine the array index
    */
   _hash(key) {
-    let length = key.length; // length of the key/string to use for the loop conditional
-    let h = 5381; // large prime number
+    let length = key.length; 
+    let h = 5381;
 
     for (let i = 0; i < length; i++) {
       h = h * 33 ^ key.charCodeAt(i);
@@ -58,14 +61,18 @@ class Hashtable {
 
 };
 
-let test = new Hashtable(100);
+let test = new Hashtable(5);
 test._add('foo', 'bar');
 test._add('cool', 'beans');
 test._add('remote', 'sucks');
 test._add('sawyer', 'puppers');
 test._add('meghan', 'wifey');
 test._add('joe', 'is tired');
-test._get('joe')
-console.log(test);
+test._add('joe', 'is hungry');
+test._add('joe', 'is funny');
+test._add('joe', 'is funny');
+test._add('joe', 'is funny');
+test._add('joe', 'is funny');
+test._contains('joe');
 
 module.exports = Hashtable;
