@@ -3,8 +3,9 @@
 const Node = require('./node.js');
 
 class LL {
-  constructor() {
-    this.head = null;
+  constructor(node) {
+    this.head = node;
+    this.count = 0;
   };
 
 };

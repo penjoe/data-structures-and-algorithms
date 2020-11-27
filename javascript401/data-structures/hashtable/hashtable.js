@@ -1,6 +1,7 @@
 'use strict';
 
 const LL = require('./ll.js');
+const Node = require('./node.js');
 
 class Hashtable {
 
@@ -11,6 +12,7 @@ class Hashtable {
   constructor(size) {
     this.size = size;
     this.storage = new Array(size);
+    this.count = 0;
   };
 
   /**
@@ -18,31 +20,49 @@ class Hashtable {
    * @param {*} key - the key that is ran through the hashing function
    * @param {*} value - the value to be stored in the hashtable
    */
-  _add(key, value) {
+  _set(key, value) {
 
-    let hash = this._hash(key); // gets the index position for the key/value pair
+    let index = this._hash(key); // gets the index position for the key/value pair
+    let bucket = this.storage[index];
+    let data = new Node([key, value]);
 
-    if (!this.storage[hash]) {
-      let ll = new LL();
-      ll._llAdd([key, value]);
-      this.storage[hash] = ll;
+    if (!this.storage[index]) {
+
+      bucket = new LL(data);  // bucket is now a linked list and can be traversed or mutated as such
+      this.storage[index] = bucket;
+      bucket.count++;
+      this.count++;
+
+      return 'new bucket created at index ' + index;
+
     }
     else {
-      this.storage[hash]._llAdd([key, value]);
+
+      let current = bucket.head;
+
+      while (current.next) {
+        current = current.next;
+      };
+      current.next = data;
+      bucket.count++;
+      this.count++;
+
+      return 'new item placed in bucket at position ' + bucket.count;
     };
+
 
   };
 
   /* use the LL method at each hash to get a specific key value pair */
   _get(key) {
 
-    let hash = this._hash(key);
+    let index = this._hash(key);
 
-    if (!this.storage[hash]) {
+    if (!this.storage[index]) {
       return null;
     }
     else {
-      this.storage[hash].getValue(key)
+      this.storage[index].getValue(key)
     };
 
   };
@@ -71,8 +91,9 @@ class Hashtable {
 
 };
 
-let test = new Hashtable(500);
+let test = new Hashtable(1337);
 
-console.log(test._add('foo', 'bar'))
+console.log(test._set('foo', 'bar'))
+console.log(test._set('name', 'joe'));
 
 module.exports = Hashtable;
