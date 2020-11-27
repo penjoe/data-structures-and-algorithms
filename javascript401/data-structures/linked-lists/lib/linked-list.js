@@ -16,6 +16,7 @@ class LinkedList {
    * @function insertBefore - Will insert a new node before a specified node.
    * @function insertAfter - Will insert a new node after a specified node.
    * @function includes - Will search linked list, returning a true/false if a given value is found.
+   * @function getValue - Will search for and return a value.
    * @function toString - Will traverse linked list and concat each nodes value into a string.
    * @function kthFromEnd -  Will take in a number and return the value of the node that is that number from the last node.
    * @function nodeCounter - Will traverse linked list and return the total # of nodes.
@@ -135,6 +136,24 @@ class LinkedList {
     console.log(false);
     return false;
 
+  };
+
+  /**
+   * Will traverse a linked list, search for a specific value and return that value if it exists.
+   * @param {*} val - the value to search for within the linked list.
+   * @returns the value of the node or null if not found.
+   */
+  getValue(val) {
+
+    let current = this.head;
+
+    while (current) {
+      if ( current.value === val) {
+        return current.value;
+      }
+      current = current.next;
+    };
+    return null;
   };
 
   /**
