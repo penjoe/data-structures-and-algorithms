@@ -16,7 +16,7 @@ class Hashtable {
   };
 
   /**
-   * Method that takes in a key/value pair and adds the value to the hashtable using the hashed key to point to the correct index
+   * Method that takes in a key/value pair and adds the value to the hashtable using the hashed key to point to the correct index. Uses a linked list implementation as the storage type of each "bucket"
    * @param {*} key - the key that is ran through the hashing function
    * @param {*} value - the value to be stored in the hashtable
    */
@@ -24,7 +24,7 @@ class Hashtable {
 
     let index = this._hash(key); // gets the index position for the key/value pair
     let bucket = this.storage[index];
-    let data = new Node([key, value]);
+    let data = new Node([key, value]);  // index [0] is the key and index [1] is the value i.e. bucket.(head || current).value([0] || [1])
 
     if (!this.storage[index]) {
 
@@ -38,6 +38,9 @@ class Hashtable {
     }
     else {
 
+      // should add some validation to either prevent dup keys or otherwise accomodate them
+      // also validation to require a value if a key is given. no NULL values allowed
+
       let current = bucket.head;
 
       while (current.next) {
@@ -50,26 +53,58 @@ class Hashtable {
       return 'new item placed in bucket at position ' + bucket.count;
     };
 
-
   };
 
-  /* use the LL method at each hash to get a specific key value pair */
+  /**
+   * Takes in a key, hashes the key to find the correct index of the hash table, traverses the corresponding linked list to see if the key value pair exists and returns the value associated with the key
+   * @param {string} key - the key uses to hash for the index position of the hash table
+   * @returns the value associated with the provided key
+   */
   _get(key) {
 
     let index = this._hash(key);
+    let bucket = this.storage[index];
 
-    if (!this.storage[index]) {
-      return null;
-    }
-    else {
-      this.storage[index].getValue(key)
+    if (!bucket) {
+      return 'these are not the droids you are looking for';
+    };
+
+    let current = bucket.head;
+
+    while (current) {
+      if (current.value[0] === key) {
+        return current.value[1];
+      };
+      current = current.next;
     };
 
   };
 
-  /* use a LL method to cehck if a specific value exists at this hash*/
+  /**
+   * Takes in a key, hashes the key to find the index position and traverses the list to see if the key belongs to a key value pair
+   * @param {string} key - the key used to hash for the index position of the hash table
+   * @returns a boolean value if the key/value pair exists
+   */
   _contains(key) {
-    // hash the key to find the correct index    
+
+    let index = this._hash(key);
+    let bucket = this.storage[index];
+
+    if (!bucket) {
+      return false;
+    };
+
+    let current = bucket.head;
+
+    while (current) {
+      if (current.value[0] === key) {
+        return true;
+      };
+      current = current.next;
+    };
+
+    return false;
+       
   };
 
   /**
@@ -88,12 +123,6 @@ class Hashtable {
     return hash % this.size;
   };
 
-
 };
-
-let test = new Hashtable(1337);
-
-console.log(test._set('foo', 'bar'))
-console.log(test._set('name', 'joe'));
 
 module.exports = Hashtable;
