@@ -4,8 +4,8 @@ const Stack = require('../stacks-and-queues/lib/stack.js');
 
 const bracketValidation = (str) => {
 
-  // if( !str ) { return false; };
-  // if( str.length <= 1 ) { return false; };
+  if( !str ) { return false; };
+  if( str.length <= 1 ) { return false; };
 
   let stack = new Stack();
 
