@@ -33,13 +33,10 @@ class LinkedList {
 
     /** Instantiate a new node object. */
     let node = new Node(addVal);
-
     /** Gives the 'next' pointer of the newly created node the value of the head of the linked list. */
     node.next = this.head;
-
     /** Assigns the 'head' pointer to the new node. */
     this.head = node;
-
     /** 'Head' now has the value of the new node so the new head of the linked list will be whatever value is added with insert() */
     return this.head;
 
@@ -128,12 +125,10 @@ class LinkedList {
     /** So long as the current node has a value, do stuff. */
     while( current !== null ) {
       if (current.value === searchVal) {
-        console.log(true);
         return true;
       };
       current = current.next;
     };
-    console.log(false);
     return false;
 
   };
@@ -180,7 +175,6 @@ class LinkedList {
           result += ' NULL';
       };
     };
-    console.log(result);
     return result;
   };
 
@@ -199,7 +193,6 @@ class LinkedList {
     let totalNodes = 1;
 
     if ( current === null) {
-      console.log(0);
       return 0;
     } else {
       while (current.next !== null) {
@@ -248,7 +241,6 @@ class LinkedList {
       tally++;
       current = current.next;
     };
-    console.log(tally);
     return tally;
   };
 
