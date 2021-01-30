@@ -1,22 +1,30 @@
 'use strict';
 
-const Queue = require('../../stacks-and-queues/lib/stack.js');
+const PseudoQueue = require('../queues-with-stacks.js');
 
-class PseudoQueue {
+describe('Unit testing for PseudoQueue class', () => {
 
-  constructor(){
-    this.stack1 = new Queue();
-    this.stack2 = new Queue();
-  };
+  it('dequeu should return the first item enqueued', () => {
 
-  enqueue(){
+    let q = new PseudoQueue();
+    q.enqueue('test')
+    q.enqueue('joe');
     
-  };
+    expect(q.dequeue()).toStrictEqual('test');
 
-  dequeue(){
+  });
 
-  };
+  it('should return an error string to enqueue with no value ', () => {
 
-};
+    let q = new PseudoQueue();
+    expect(q.enqueue()).toStrictEqual('no value to add'); 
+    
+  });
 
-module.exports = PseudoQueue;
+  it('should return null if trying to dequeue an empty pseudoqueue', () => {
+    
+    let q = new PseudoQueue();
+    expect(q.dequeue()).toStrictEqual(null);
+  });
+
+});

@@ -25,7 +25,7 @@ class Stack {
 
   // pops top node off of stack
   pop() {
-
+    if(!this.top) { return null; };
     let temp = this.top;
     this.top = this.top.next;
     temp.next = null;
@@ -39,7 +39,6 @@ class Stack {
     if(!this.top){
       return {};
     } else if(this.top.value){
-      console.log(this.top.value);
       return this.top.value;
     }
 
@@ -49,10 +48,8 @@ class Stack {
   isEmpty() {
 
     if (this.top) {
-      console.log('false');
       return false;
     } else if (!this.top) {
-      console.log('true');
       return true;
     } else {
       return {};
