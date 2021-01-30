@@ -15,7 +15,7 @@ class Queue {
   };
 
   // adds new node to the back
-  enqueue(val) {
+  nq(val) {
 
     let node = new Node(val);
 
@@ -35,7 +35,7 @@ class Queue {
   };
 
   // removes node at the front and returns
-  dequeue() {
+  dq() {
 
     if (!this.isEmpty()){
 
@@ -54,7 +54,7 @@ class Queue {
   peek() {
 
     if (!this.front){
-      return 'empty';
+      return null;
     } else if (this.front){
       return this.front.value;
     };
