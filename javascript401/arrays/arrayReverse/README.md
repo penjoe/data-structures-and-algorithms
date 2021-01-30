@@ -1,6 +1,6 @@
 # Reverse an Array
 <!-- Short summary or background information -->
-Reverse an 
+Reverse an array.
 
 ## Challenge
 <!-- Description of the challenge -->
@@ -8,7 +8,7 @@ Write a function called `reverseArray` which takes an array as an argument. With
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-The approach for this challenge was fairly straight forward. 
+The approach for this challenge was fairly straight forward. Assign pointers to the front and end of the array and swap the values inside a loop. At each pass of the loop, the front and end pointer will get one closer to the center. Once the end is greater than the front, stop the loop and return the array.
 - Write a function that takes in an array.
 - Declare a start variable that is set to 0, which is the first index of the array.
 - Declare an end variable which is the array.length - 1, which will give the last index of the array.
