@@ -187,10 +187,16 @@ class LinkedList {
    */
   kthFromEnd(k) {
 
+    if( !this.head ) { return 'error'; }; // 0 nodes
+    if( this.head.next === null ) { return this.head; }; // 1 node
+    if( k > this.nodeCounter() ) {return 'error'; }; // not enough nodes
+    if( k <= 0 ) { return 'error'; }; // k is a negative
+    
     let current = this.head;
     let second = this.head;
     let counter = 0;
     let totalNodes = 1;
+
 
     if ( current === null) {
       return 0;

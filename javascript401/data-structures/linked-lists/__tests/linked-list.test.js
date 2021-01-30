@@ -128,4 +128,64 @@ describe('Test suite for Linked Lists', () => {
 
   });
 
+  describe('Testing for k-th from end method on the linked list class', () => {
+
+    it('should return the head if there is only one node in the linked list.', () => {
+
+      let list = new LL();
+      list.insert(1);
+      let actual = list.kthFromEnd(5);
+
+      expect(actual).toStrictEqual(list.head);
+      
+    });
+
+    it('should return the string "error" if k is greater than the number of nodes in the list', () => {
+
+      let list = new LL();
+      list.insert(2);
+      list.insert(1);
+      let actual = list.kthFromEnd(5);
+
+      expect(actual).toStrictEqual('error');
+      
+    });
+
+    it('should return the string "error" if there is no head of the linked list /list is empty', () => {
+      
+      let list = new LL();
+      let actual = list.kthFromEnd(5);
+
+      expect(actual).toStrictEqual('error');
+
+    });
+
+    it('should return the string "error" if k is a negative number', () => {
+
+      let list = new LL();
+      list.insert(1);
+      list.insert(2);
+      list.insert(3);
+      let actual = list.kthFromEnd(-5);
+
+      expect(actual).toStrictEqual('error')
+      
+    });
+
+    it('should return the value of the node when given a number == happy path test', () => {
+
+      let list = new LL();
+      list.insert(1)
+      list.insert(2)
+      list.insert(3)
+      list.insert(4)
+      list.insert(5)
+      let actual = list.kthFromEnd(2);
+
+      expect(actual).toStrictEqual(3)
+      
+    });
+
+  });
+
 });
