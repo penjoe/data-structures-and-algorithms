@@ -16,6 +16,7 @@ class LinkedList {
    * @function insertBefore - Will insert a new node before a specified node.
    * @function insertAfter - Will insert a new node after a specified node.
    * @function includes - Will search linked list, returning a true/false if a given value is found.
+   * @function getValue - Will search for and return a value.
    * @function toString - Will traverse linked list and concat each nodes value into a string.
    * @function kthFromEnd -  Will take in a number and return the value of the node that is that number from the last node.
    * @function nodeCounter - Will traverse linked list and return the total # of nodes.
@@ -32,13 +33,10 @@ class LinkedList {
 
     /** Instantiate a new node object. */
     let node = new Node(addVal);
-
     /** Gives the 'next' pointer of the newly created node the value of the head of the linked list. */
     node.next = this.head;
-
     /** Assigns the 'head' pointer to the new node. */
     this.head = node;
-
     /** 'Head' now has the value of the new node so the new head of the linked list will be whatever value is added with insert() */
     return this.head;
 
@@ -127,14 +125,30 @@ class LinkedList {
     /** So long as the current node has a value, do stuff. */
     while( current !== null ) {
       if (current.value === searchVal) {
-        console.log(true);
         return true;
       };
       current = current.next;
     };
-    console.log(false);
     return false;
 
+  };
+
+  /**
+   * Will traverse a linked list, search for a specific value and return that value if it exists.
+   * @param {*} val - the value to search for within the linked list.
+   * @returns the value of the node or null if not found.
+   */
+  getValue(val) {
+
+    let current = this.head;
+
+    while (current) {
+      if ( current.value === val) {
+        return current.value;
+      }
+      current = current.next;
+    };
+    return null;
   };
 
   /**
@@ -161,7 +175,6 @@ class LinkedList {
           result += ' NULL';
       };
     };
-    console.log(result);
     return result;
   };
 
@@ -174,13 +187,18 @@ class LinkedList {
    */
   kthFromEnd(k) {
 
+    if( !this.head ) { return 'error'; }; // 0 nodes
+    if( this.head.next === null ) { return this.head; }; // 1 node
+    if( k > this.nodeCounter() ) {return 'error'; }; // not enough nodes
+    if( k <= 0 ) { return 'error'; }; // k is a negative
+    
     let current = this.head;
     let second = this.head;
     let counter = 0;
     let totalNodes = 1;
 
+
     if ( current === null) {
-      console.log(0);
       return 0;
     } else {
       while (current.next !== null) {
@@ -229,7 +247,6 @@ class LinkedList {
       tally++;
       current = current.next;
     };
-    console.log(tally);
     return tally;
   };
 

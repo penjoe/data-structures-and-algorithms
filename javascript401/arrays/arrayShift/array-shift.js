@@ -1,9 +1,5 @@
 'use strict'
 
-/*
-Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built in methods available to your language, return an array with the newnvalue added at the middle index.
-*/
-
 const insertShiftArray = (array, value) => {
   let mid = Math.floor(array.length/2);
   let arr = array;
@@ -16,14 +12,9 @@ const insertShiftArray = (array, value) => {
         newArr[i + 1] = arr[i]; 
       } else if (i > mid) {
         newArr[i + 1] = arr[i];
-      }
-    }
-  console.log(newArr);
+      };
+    };
   return newArr;
 }
-
-console.log(insertShiftArray([2,4,6,8], 5));
-
-
 
 module.exports = insertShiftArray;

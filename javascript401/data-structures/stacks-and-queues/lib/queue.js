@@ -14,16 +14,27 @@ class Queue {
     this.back = null;
   };
 
-  // 
+  // adds new node to the back
   enqueue(val) {
 
     let node = new Node(val);
-    this.back.next = node;
-    this.back = node;
-    return this.back;
+
+    if (this.isEmpty()){
+
+      this.front = node;
+      this.back = node;
+      
+    } 
+    else {
+
+      this.back.next = node;
+      this.back = this.back.next
+      
+    };
 
   };
 
+  // removes node at the front and returns
   dequeue() {
 
     if (!this.isEmpty()){
@@ -34,32 +45,31 @@ class Queue {
       return temp.value;
 
     } else {
-      return {};
+      return 'empty';
     };
 
   };
 
+  // looks at node at the front
   peek() {
 
     if (!this.front){
-      return {};
+      return 'empty';
     } else if (this.front){
-      console.log(this.front.value);
       return this.front.value;
     };
     
   };
 
+  // returns true/false whether or not queue is empty
   isEmpty() {
 
     if (this.front){
-      console.log(false);
       return false;
     } else if (!this.front){
-      console.log(true);
       return true;
     } else {
-      return {error: "error"};
+      throw new Error('Something went wrong');
     };
     
   };

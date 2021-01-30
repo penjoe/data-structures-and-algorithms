@@ -13,12 +13,9 @@ class Node {
    * @param {*} this.next - This points to the next node in the linked list allowing for traversal.
    */
   constructor(value){
-
     this.value = value;
     this.next = null;
-
   };
-
 };
 
 module.exports = Node;

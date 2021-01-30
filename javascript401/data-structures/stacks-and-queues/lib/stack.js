@@ -25,6 +25,7 @@ class Stack {
 
   // pops top node off of stack
   pop() {
+
     if(!this.top) { return null; };
     let temp = this.top;
     this.top = this.top.next;
@@ -37,8 +38,10 @@ class Stack {
   peek() {
 
     if(!this.top){
+
       return {};
     } else if(this.top.value){
+
       return this.top.value;
     }
 
@@ -52,7 +55,7 @@ class Stack {
     } else if (!this.top) {
       return true;
     } else {
-      return {};
+      return 'error';
     };
 
   };
